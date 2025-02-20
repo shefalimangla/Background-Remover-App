@@ -1,8 +1,8 @@
 # Background-Remover-App
 This is a simple Flask-based web application that allows users to remove backgrounds from images using the rembg library. The app provides an easy-to-use interface where users can upload images, process them, and view/download the results.
 # Features 🚀
-✔️ Upload images in PNG, JPG, JPEG, or WEBP format.
-✔️ Automatically removes background using rembg.
+** ✔️ Upload images in PNG, JPG, JPEG, or WEBP format. **
+** ✔️ Automatically removes background using rembg. **
 ✔️ Displays both original and processed images.
 ✔️ Secure file handling with werkzeug.utils.secure_filename.
 ✔️ Organized file storage in the static/uploads directory.
