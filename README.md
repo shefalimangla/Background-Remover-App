@@ -3,9 +3,9 @@ This is a simple Flask-based web application that allows users to remove backgro
 # Features 🚀
 - ✔️ Upload images in PNG, JPG, JPEG, or WEBP format. 
 - ✔️ Automatically removes background using rembg.
-✔️ Displays both original and processed images.
-✔️ Secure file handling with werkzeug.utils.secure_filename.
-✔️ Organized file storage in the static/uploads directory.
+- ✔️ Displays both original and processed images.
+- ✔️ Secure file handling with werkzeug.utils.secure_filename.
+- ✔️ Organized file storage in the static/uploads directory.
 
 # 1. Run the Application
 - After setting up the environment and running the script, the tool will provide a web interface for background removal.
