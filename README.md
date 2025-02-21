@@ -9,9 +9,13 @@ This is a simple Flask-based web application that allows users to remove backgro
 
 # 1. Run the Application
 - After setting up the environment and running the script, the tool will provide a web interface for background removal.
+- Run the following command to install required libraries:
+  - pip install -r requirements.txt
+
 # 2. Upload an Image
 - Select an image file (PNG, JPG, JPEG, or WEBP) and upload it.
 - The tool will process the image and remove its background automatically.
+  
 # 3. View & Download the Processed Image
 - Once processing is complete, the app will display both original and processed images.
 - A download button allows users to save the background-removed image.
