@@ -32,15 +32,25 @@ def remove_background(input_path,output_path):
 def home():
     return render_template('home.html')
 
-@app.route('/remback',methods=['POST'])
+@app.route('/remback', methods=['POST'])
 def remback():
-    file = request.files['file']
+    file = request.files.get('file')  
+
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        rembg_img_name = filename.split('.')[0]+"_rembg.png"
-        remove_background(UPLOAD_FOLDER+'/'+filename,UPLOAD_FOLDER+'/'+rembg_img_name)
-        return render_template('home.html',org_img_name=filename,rembg_img_name=rembg_img_name)
+        input_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        rembg_img_name = filename.rsplit('.', 1)[0] + "_rembg.png"
+        output_path = os.path.join(app.config['UPLOAD_FOLDER'], rembg_img_name)
+
+        try:
+            file.save(input_path)
+            remove_background(input_path, output_path)
+            return render_template('home.html', org_img_name=filename, rembg_img_name=rembg_img_name)
+        except Exception as e:
+            return render_template('home.html', error=f"An error occurred: {str(e)}")
+
+    else:
+        return render_template('home.html', error="Invalid file type or no file uploaded.")
     
 @app.route('/download/<filename>')
 def download_file(filename):
